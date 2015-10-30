@@ -26,5 +26,5 @@ sessionID.json
 *.waBackup
 # Wakanda Remote Model Cache
 *.waRemoteModel
-/anapp/test.js
 /anapp Solution/Modules/WebUntisSync/node_modules/
+/anapp/test.js
