@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><permissions>
+	<allow action="promote" groupName="Managers" groupID="422E8F3EBEE6804EBAD670EFF708FCB8" resource="Model.User.register" temporaryForcePermissions="false" type="method"/>
+	<allow type="module" resource="webUntisSync" action="executeFromClient"/>
+	<allow action="read" groupName="Users" groupID="7D340DA44694344286430637597C8BC5" resource="Model.LearnedLesson" temporaryForcePermissions="false" type="dataClass"/>
+	<allow action="create" groupName="Users" groupID="7D340DA44694344286430637597C8BC5" resource="Model.LearnedLesson" temporaryForcePermissions="false" type="dataClass"/>
+	<allow action="update" groupName="Users" groupID="7D340DA44694344286430637597C8BC5" resource="Model.LearnedLesson" temporaryForcePermissions="false" type="dataClass"/>
+	<allow action="remove" groupName="Users" groupID="7D340DA44694344286430637597C8BC5" resource="Model.LearnedLesson" temporaryForcePermissions="false" type="dataClass"/>
+	<allow action="read" groupName="Users" groupID="7D340DA44694344286430637597C8BC5" resource="Model.User" temporaryForcePermissions="false" type="dataClass"/>
+	<allow action="create" groupName="Managers" groupID="422E8F3EBEE6804EBAD670EFF708FCB8" resource="Model.User" temporaryForcePermissions="false" type="dataClass"/>
+	<allow action="update" groupName="Users" groupID="7D340DA44694344286430637597C8BC5" resource="Model.User" temporaryForcePermissions="false" type="dataClass"/>
+	<allow action="remove" groupName="Managers" groupID="422E8F3EBEE6804EBAD670EFF708FCB8" resource="Model.User" temporaryForcePermissions="false" type="dataClass"/>
+</permissions>

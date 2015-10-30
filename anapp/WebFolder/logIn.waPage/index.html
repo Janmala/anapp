@@ -1,0 +1,38 @@
+<!DOCTYPE html><html>
+    <head>
+        <title>index</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="generator" content="Wakanda GUIDesigner"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+        <meta name="WAF.catalog" content="User"/>
+        <meta name="WAF.packageJson"/>
+    	<meta name="wakanda-version" content="10 build 10.187175"/>
+		<meta name="wakanda-build" content="10.187175"/>
+		<meta name="WAF.config.loadCSS" id="waf-interface-css" content="styles/index.css"/>
+		<meta name="WAF.config.loadCSS" id="waf-project-css" content="/application.css"/>
+
+		<meta name="WAF.config.datasources" data-type="dataSource" data-source-type="object" data-source="logInParams" data-lib="WAF" data-id="logInParams" data-dataType="string" data-autoLoad="true" data-attributes="userName:string,userPassword:string" content="logInParams"/>
+		<meta name="WAF.config.datasources" data-type="dataSource" data-source-type="object" data-source="registerParams" data-lib="WAF" data-id="registerParams" data-dataType="string" data-autoLoad="true" data-attributes="fullName:string,mailAddress:string,userName:string,userPassword:string,userPasswordRepeat:string" content="registerParams"/>
+		
+		<meta name="WAF.config.datasources" data-type="dataSource" data-source-type="dataClass" data-source="User" data-lib="WAF" data-id="user" data-dataType="string" data-autoLoad="false" content="user"/><meta name="WAF.config.loadJS" id="waf-script" content="scripts/index.js"/>
+</head>
+    <body id="waf-body" data-workspace-width="0" data-workspace-orientation="portrait" data-workspace-height="0" data-workspace-device="desktop" data-viewport-width="device-width" data-viewport-minimum-scale="1.0" data-viewport-maximum-scale="1.0" data-viewport-initial-scale="1.0" data-type="document" data-title="index" data-theme="metal" data-platform="desktop" data-lib="WAF" data-group="[]" data-entire-model="false" data-apple-meta-tags-status-bar="default" class="waf-theme metal" style="bottom:;right:;visibility:hidden;">
+		<label id="label1" for="textField1" data-valign="middle" data-type="label" data-margin="5" data-lib="WAF" data-constraint-top="true" data-constraint-left="true" class="waf-widget waf-label waf-label-textfield">Username</label>
+				<label id="label3" for="textField3" data-valign="middle" data-type="label" data-margin="5" data-lib="WAF" class="waf-widget waf-label waf-label-textfield">Passwort</label>
+		<input type="text" id="textField1" data-type="textField" data-readOnly="false" data-password="false" data-multiline="false" data-lib="WAF" data-label-position="left" data-label="Username" data-datapicker-on="false" data-datapicker-icon-only="false" data-constraint-top="true" data-constraint-left="true" data-binding="logInParams.userName" class="waf-widget waf-textField"/>
+				<div id="richText1" data-type="richText" data-target="_blank" data-plainText="true" data-overflow="Hidden" data-lib="WAF" data-label-position="left" data-label="" data-constraint-top="true" data-constraint-left="true" data-autoWidth="false" class="waf-widget waf-richText">Anmelden </div>
+		<div id="richText2" data-type="richText" data-target="_blank" data-plainText="true" data-overflow="Hidden" data-lib="WAF" data-label-position="left" data-label="" data-constraint-top="true" data-constraint-left="true" data-autoWidth="false" class="waf-widget waf-richText">Registrieren</div>
+	<input type="text" id="textField4" data-type="textField" data-readOnly="false" data-password="false" data-multiline="false" data-lib="WAF" data-label-position="left" data-label="Username" data-datapicker-on="false" data-datapicker-icon-only="false" data-constraint-top="true" data-constraint-left="true" data-binding="registerParams.userName" class="waf-widget waf-textField"/>	<label id="label4" for="textField4" data-valign="middle" data-type="label" data-margin="5" data-lib="WAF" class="waf-widget waf-label waf-label-textfield">Username</label>
+		<input type="text" id="textField3" data-type="textField" data-readOnly="false" data-password="true" data-multiline="false" data-lib="WAF" data-label-position="left" data-label="Passwort" data-datapicker-on="false" data-datapicker-icon-only="false" data-constraint-top="true" data-constraint-left="true" data-binding="logInParams.userPassword" class="waf-widget waf-textField"/>
+		<label id="label5" for="textField5" data-valign="middle" data-type="label" data-margin="5" data-lib="WAF" class="waf-widget waf-label waf-label-textfield">E-Mail</label>
+				<label id="label7" for="textField6" data-valign="middle" data-type="label" data-margin="5" data-lib="WAF" class="waf-widget waf-label waf-label-textfield">Passwort</label>
+		<input type="text" id="textField5" data-type="textField" data-readOnly="false" data-password="false" data-multiline="false" data-lib="WAF" data-label-position="left" data-label="E-Mail" data-datapicker-on="false" data-datapicker-icon-only="false" data-constraint-top="true" data-constraint-left="true" data-binding="registerParams.mailAddress" class="waf-widget waf-textField"/>
+	<input type="text" id="textField7" data-type="textField" data-readOnly="false" data-password="false" data-multiline="false" data-lib="WAF" data-label-position="left" data-label="Name,Vorname" data-datapicker-on="false" data-datapicker-icon-only="false" data-constraint-top="true" data-constraint-left="true" data-binding="registerParams.fullName" class="waf-widget waf-textField"/>	<label id="label8" for="textField7" data-valign="middle" data-type="label" data-margin="5" data-lib="WAF" class="waf-widget waf-label waf-label-textfield">Name,Vorname</label>
+			<input type="text" id="textField6" data-type="textField" data-readOnly="false" data-password="true" data-multiline="false" data-lib="WAF" data-label-position="left" data-label="Passwort" data-datapicker-on="false" data-datapicker-icon-only="false" data-constraint-top="true" data-constraint-left="true" data-binding="registerParams.userPassword" class="waf-widget waf-textField"/>
+		<label id="label9" for="textField8" data-valign="middle" data-type="label" data-margin="5" data-lib="WAF" class="waf-widget waf-label waf-label-textfield">Passwort wiederholen</label>
+		<input type="text" id="textField8" data-type="textField" data-readOnly="false" data-password="true" data-multiline="false" data-lib="WAF" data-label-position="left" data-label="Passwort wiederholen" data-datapicker-on="false" data-datapicker-icon-only="false" data-constraint-top="true" data-constraint-left="true" data-binding="registerParams.userPasswordRepeat" class="waf-widget waf-textField"/>
+		<button id="registerButton" data-type="button" data-text="Registrieren" data-target="_blank" data-lib="WAF" data-constraint-top="true" data-constraint-left="true" data-action="simple" class="waf-widget waf-button"></button>
+		<button id="logInButton" data-type="button" data-text="Anmelden" data-target="_blank" data-lib="WAF" data-constraint-top="true" data-constraint-left="true" data-action="simple" class="waf-widget waf-button"></button>
+		<script type="text/javascript" src="/waLib/WAF/Loader.js"></script>
+	</body>
+</html>

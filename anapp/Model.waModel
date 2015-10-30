@@ -1,0 +1,229 @@
+
+{
+	"toJSON" : true,
+	"extraProperties" : 
+	{
+		"version" : "2",
+		"classes" : 
+		{
+			"LearnedLesson" : 
+			{
+				"panelColor" : "#B2A2C7",
+				"panel" : 
+				{
+					"isOpen" : "true",
+					"pathVisible" : true,
+					"position" : 
+					{
+						"X" : 70,
+						"Y" : 25
+					}
+				}
+			},
+			"User" : 
+			{
+				"panelColor" : "#70CCC2",
+				"panel" : 
+				{
+					"isOpen" : "true",
+					"pathVisible" : true,
+					"position" : 
+					{
+						"X" : 405,
+						"Y" : 42
+					}
+				}
+			}
+		},
+		"model" : 
+		{
+			"scriptMode" : "manual",
+			"workspaceLeft" : 0,
+			"workspaceTop" : 0,
+			"lastScriptLocation" : 
+			{
+				"LearnedLesson" : 
+				{
+					"method" : "LearnedLesson/LearnedLesson-methods.js"
+				},
+				"User" : 
+				{
+					"method" : "User/User-methods.js",
+					"events" : "User/User-events.js"
+				}
+			}
+		}
+	},
+	"dataClasses" : 
+	[
+		{
+			"name" : "LearnedLesson",
+			"className" : "LearnedLesson",
+			"collectionName" : "LearnedLessonCollection",
+			"scope" : "public",
+			"restrictingQuery" : 
+			[
+				{
+					"queryStatement" : "createdBy.userName==:$userName"
+				}
+			],
+			"attributes" : 
+			[
+				{
+					"name" : "ID",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"unique" : true,
+					"autosequence" : true,
+					"type" : "long",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "shortKey",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "description",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "duration",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "long"
+				},
+				{
+					"name" : "dateOfEvent",
+					"kind" : "storage",
+					"matchColumn" : "startTime",
+					"scope" : "public",
+					"type" : "date",
+					"simpleDate" : true
+				},
+				{
+					"name" : "hour",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "long"
+				},
+				{
+					"name" : "minute",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "long"
+				},
+				{
+					"name" : "isDemo",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "bool"
+				},
+				{
+					"name" : "createdBy",
+					"kind" : "relatedEntity",
+					"scope" : "publicOnServer",
+					"type" : "User",
+					"path" : "User"
+				}
+			],
+			"events" : 
+			[
+				{
+					"kind" : "init",
+					"from" : "$mainModel.LearnedLesson.events.init",
+					"userDefined" : true
+				}
+			],
+			"key" : 
+			[
+				{
+					"name" : "ID"
+				}
+			]
+		},
+		{
+			"name" : "User",
+			"className" : "User",
+			"collectionName" : "UserCollection",
+			"matchTable" : "Users",
+			"scope" : "public",
+			"attributes" : 
+			[
+				{
+					"name" : "ID",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"unique" : true,
+					"autosequence" : true,
+					"type" : "long",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "userName",
+					"kind" : "storage",
+					"matchColumn" : "Username",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "fullName",
+					"kind" : "storage",
+					"matchColumn" : "FullName",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "mailAddress",
+					"kind" : "storage",
+					"matchColumn" : "mailAdress",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "userPassword",
+					"kind" : "storage",
+					"scope" : "publicOnServer",
+					"type" : "string"
+				},
+				{
+					"name" : "learnedLessonCollection",
+					"kind" : "relatedEntities",
+					"scope" : "public",
+					"type" : "LearnedLessonCollection",
+					"reversePath" : true,
+					"path" : "createdBy"
+				}
+			],
+			"events" : 
+			[
+				{
+					"kind" : "restrict",
+					"from" : "$mainModel.User.events.restrict",
+					"userDefined" : true
+				}
+			],
+			"methods" : 
+			[
+				{
+					"name" : "register",
+					"applyTo" : "dataClass",
+					"scope" : "public",
+					"from" : "$mainModel.User.methods.register",
+					"userDefined" : true
+				}
+			],
+			"key" : 
+			[
+				{
+					"name" : "ID"
+				}
+			]
+		}
+	]
+}
