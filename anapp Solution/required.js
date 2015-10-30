@@ -2,8 +2,11 @@
 
 function myLogin(userName, password)
 {    
-        
- 
+       
+    if (userName == "sysadmin") {
+    	return false;
+    }
+    
     var user = application.ds.User({"userName":userName}); //look for the user in the People datastore class
     if (user == null) //if the user name does not exist in our datastore class
         return false; //let Wakanda try to find it in the solution's directory
@@ -38,7 +41,7 @@ function myLogin(userName, password)
             };
         }
         else
-            return { error: 1024, errorMessage:"invalid login" }
+            return false;
     }
     
     
