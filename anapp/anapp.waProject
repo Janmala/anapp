@@ -3,14 +3,14 @@
 	<folder path="./WebFolder/">
 		<tag name="webFolder"/>
 	</folder>
-	<folder path="./DataFolder/">
-		<tag name="dataFolder"/>
-	</folder>
 	<folder path="./Widgets/">
 		<tag name="widgets"/>
 	</folder>
 	<folder path="./Themes/">
 		<tag name="themes"/>
+	</folder>
+	<folder path="./templates/">
+		<tag name="dataFolder"/>
 	</folder>
 	<file path="./Model.waModel">
 		<tag name="catalog"/>

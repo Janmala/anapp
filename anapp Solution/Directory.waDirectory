@@ -10,5 +10,5 @@
 		<include user="sysadmin" ID="0F0E0863F72FF94584B4D04037208D56"/>
 		<include group="Admin" groupID="01000000000000000000000000000000"/>
 	</group>
-	<user ID="0F0E0863F72FF94584B4D04037208D56" name="sysadmin" fullName="Systemadministrator" password="a1a86588a67754ac4ed2b0778db556ee"/>
+	<user ID="0F0E0863F72FF94584B4D04037208D56" name="sysadmin" fullName="Systemadministrator" password="f52f573b4797ce5cab6a47832aa4e945"/>
 </directory>
