@@ -1,5 +1,6 @@
 
 
+
 model.User.events.restrict = function(event) {
 	var session = currentSession();
 	if (session.belongsTo("Managers")) {
