@@ -44,6 +44,11 @@
 			"type": "widget"
 		},
 		{
+			"id": "favicon.ico",
+			"path": "TEMPLATES",
+			"type": "img/ico"
+		},
+		{
 			"id": "softGray",
 			"type": "theme"
 		},
@@ -58,17 +63,22 @@
 			"type": "style"
 		},
 		{
-			"id": "index.waPage/bower_components/pdfmake/build/pdfmake.min.js",
+			"id": "bower_components/jquery-cookie/jquery.cookie.js",
 			"path": "WEBFOLDER",
 			"type": "script"
 		},
 		{
-			"id": "index.waPage/bower_components/pdfmake/build/vfs_fonts.js",
+			"id": "bower_components/pdfmake/build/pdfmake.min.js",
 			"path": "WEBFOLDER",
 			"type": "script"
 		},
 		{
-			"id": "index.waPage/bower_components/moment/min/moment.min.js",
+			"id": "bower_components/pdfmake/build/vfs_fonts.js",
+			"path": "WEBFOLDER",
+			"type": "script"
+		},
+		{
+			"id": "bower_components/moment/min/moment.min.js",
 			"path": "WEBFOLDER",
 			"type": "script"
 		},

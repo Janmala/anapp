@@ -3,19 +3,6 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
-#textField7 {
-	z-index: 15;
-	width: 130px;
-	height: 22px;
-	top: 202px;
-	left: 617px;
-	position: absolute;
-	border-top-width: 2px;
-	border-left-width: 2px;
-	border-right-width: 2px;
-	border-bottom-width: 2px;
-}
-
 #label8 {
 	z-index: 14;
 	width: 74px;
@@ -69,19 +56,6 @@
 	position: absolute;
 }
 
-#textField4 {
-	z-index: 10;
-	width: 130px;
-	height: 22px;
-	top: 176px;
-	left: 617px;
-	position: absolute;
-	border-top-width: 2px;
-	border-left-width: 2px;
-	border-right-width: 2px;
-	border-bottom-width: 2px;
-}
-
 #label4 {
 	z-index: 9;
 	width: 49px;
@@ -113,19 +87,6 @@
 	font-size: 32px;
 	text-decoration: underline;
 	font-weight: bold;
-}
-
-#textField3 {
-	z-index: 5;
-	width: 130px;
-	height: 22px;
-	top: 203px;
-	left: 136px;
-	position: absolute;
-	border-top-width: 2px;
-	border-left-width: 2px;
-	border-right-width: 2px;
-	border-bottom-width: 2px;
 }
 
 #label3 {
@@ -168,25 +129,12 @@
 	position: absolute;
 }
 
-#textField8 {
-	z-index: 17;
-	width: 130px;
-	height: 22px;
-	top: 280px;
-	left: 617px;
-	position: absolute;
-	border-top-width: 2px;
-	border-left-width: 2px;
-	border-right-width: 2px;
-	border-bottom-width: 2px;
-}
-
 #logInButton {
 	z-index: 19;
 	width: 130px;
 	height: 58px;
 	top: 315px;
-	left: 136px;
+	left: 137px;
 	position: absolute;
 	font-size: 18px;
 }
@@ -199,5 +147,57 @@
 	left: 617px;
 	position: absolute;
 	font-size: 18px;
+}
+
+#textField2 {
+	z-index: 5;
+	width: 130px;
+	height: 22px;
+	top: 203px;
+	left: 136px;
+	position: absolute;
+	border-top-width: 2px;
+	border-left-width: 2px;
+	border-right-width: 2px;
+	border-bottom-width: 2px;
+}
+
+#textField3 {
+	z-index: 10;
+	width: 130px;
+	height: 22px;
+	top: 176px;
+	left: 617px;
+	position: absolute;
+	border-top-width: 2px;
+	border-left-width: 2px;
+	border-right-width: 2px;
+	border-bottom-width: 2px;
+}
+
+#textField4 {
+	z-index: 15;
+	width: 130px;
+	height: 22px;
+	top: 202px;
+	left: 617px;
+	position: absolute;
+	border-top-width: 2px;
+	border-left-width: 2px;
+	border-right-width: 2px;
+	border-bottom-width: 2px;
+}
+
+#textField7 {
+	z-index: 17;
+	width: 130px;
+	height: 22px;
+	top: 280px;
+	left: 617px;
+	position: absolute;
+	border-top-width: 2px;
+	border-left-width: 2px;
+	border-right-width: 2px;
+	border-bottom-width: 2px;
 }
 

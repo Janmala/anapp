@@ -2,6 +2,7 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var documentEvent = {};	// @document
 	var logInButton = {};	// @button
 	var registerButton = {};	// @button
 // @endregion// @endlock
@@ -11,13 +12,46 @@ function validateEmail(email) {
 }
 // eventHandlers// @lock
 
+	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
+	{// @endlock
+		var logInName; 
+		if($.cookie("logInName") != null){
+			logInName = $.cookie("logInName");
+		}
+		
+		logInParams = {
+			userName: logInName
+		};	
+		sources.logInParams.sync();
+		
+	};// @lock
+	
+	
+	
+	
+	
+	
+	
+	
+	/*
+	textField2.keydown.enterKey = function textField2_enterKey (enterKey)
+	{
+		alert("Joooooo")
+	};
+	*/
+	
+
 	logInButton.click = function logInButton_click (event)// @startlock
 	{// @endlock
 		
 		WAF.directory.loginByPassword( sources.logInParams.userName, sources.logInParams.userPassword, {
 		    onSuccess: function(event){
 		        if(event.result == true){        
-		        	user = WAF.directory.currentUser().fullName;    
+		        	user = WAF.directory.currentUser().fullName;
+
+					//setCookie here (Loginname) 
+					$.cookie("logInName", "" + (sources.logInParams.userName ? sources.logInParams.userName : "") );
+	 
 		        	window.location.href = "/index.waPage/";
 		           
 		        } else {
@@ -33,7 +67,7 @@ function validateEmail(email) {
 
 	registerButton.click = function registerButton_click (event)// @startlock
 	{// @endlock
-		debugger; 
+		
 		if(sources.registerParams.userName == null || sources.registerParams.fullName == null || sources.registerParams.mailAddress == null || sources.registerParams.userPassword == null || sources.registerParams.userPasswordRepeat == null ){
 			
 			alert("Bitte fülle alle Felder aus.") 
@@ -49,20 +83,16 @@ function validateEmail(email) {
 			}else {
 				ds.User.register({
 					onSuccess:function(event){
-		            	alert("Ja lecks mi am oasch dat läuft endlisch.")
+		            	alert("Du hast dich erfolgreich registriert.")
+						
+
 		    		},onError:function(error){
-		    			debugger;
 		            	alert("Fehler: " + error.error[0].message);
 					}
 				}, sources.registerParams.userName, sources.registerParams.fullName, sources.registerParams.mailAddress, sources.registerParams.userPassword, sources.registerParams.userPasswordRepeat );
 				
 				
-				var password = 'mypwx!2';  // enter a valid password here
-				var address = 'smtp.4dmail.com'; 
-				var port = 465;  // SSL port 
-				var mail = require("waf-mail/mail");
-				var message = mail.createMessage("from@4d.com", "to@4d.com", "Test", "Hello World!");
-				message.send(address , port , true, password);
+				
 
 			
 			} 
@@ -72,6 +102,7 @@ function validateEmail(email) {
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("document", "onLoad", documentEvent.onLoad, "WAF");
 	WAF.addListener("logInButton", "click", logInButton.click, "WAF");
 	WAF.addListener("registerButton", "click", registerButton.click, "WAF");
 // @endregion

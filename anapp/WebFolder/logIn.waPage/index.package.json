@@ -41,6 +41,11 @@
 			"id": "logIn.waPage/scripts/index.js",
 			"path": "WEBFOLDER",
 			"type": "script"
+		},
+		{
+			"id": "bower_components/jquery-cookie/jquery.cookie.js",
+			"path": "WEBFOLDER",
+			"type": "script"
 		}
 	]
 }

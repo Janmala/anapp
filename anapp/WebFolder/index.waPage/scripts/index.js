@@ -17,13 +17,13 @@ function render() {
 	var year = ((moment(sources.makePDFParams.startDate).diff(moment(sources.azubiParams.startDate),'days')+1) /365);
 	var yearWritten = (1);	
 		
-		if (year < 1) {
-			yearWritten = 1
-		}else if(year < 2){
-			yearWritten = 2
-		}else{
-			yearWritten = 3
-		}		
+	if (year < 1) {
+		yearWritten = 1
+	}else if(year < 2){
+		yearWritten = 2
+	}else{
+		yearWritten = 3
+	}		
 		
 	dd.content[0].table.body[1][1].text += " " + yearWritten;
 	dd.content[0].table.body[0][0].text += " " + sheetNumber;
@@ -297,7 +297,26 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
+		
 		 if (WAF.directory.currentUser()){
+			//getCookie
+			var logIn;
+			var password;
+			var schoolName;
+			var host;
+			var startDate;
+			
+			if($.cookie("azubiData") != null){
+			
+				logIn = $.cookie("azubiData").split("|")[0];
+				password =  $.cookie("azubiData").split("|")[1];
+				schoolName = $.cookie("azubiData").split("|")[2];
+				host = $.cookie("azubiData").split("|")[3];
+				if( $.cookie("azubiData").split("|")[4] != 0 ){
+					debugger;
+					startDate = new Date(parseInt( $.cookie("azubiData").split("|")[4]));
+				}
+			}
 			
 			logInParams = {
 				fullName: ("Angemeldet als: " + WAF.directory.currentUser().fullName)
@@ -306,14 +325,14 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			azubiParams = {
 				name: WAF.directory.currentUser().fullName,
 				//host: "melete.webuntis.com", 
-				host: "",
+				host: host,
 				//schoolName: "bs-technik-schwerin",
-				schoolName: "",
+				schoolName: schoolName,
 				//logIn: "finise51",
-				logIn: "",
+				logIn: logIn,
 				//password: "finise51",
-				password: "",
-				startDate: null,
+				password: password,
+				startDate: startDate,
 				isDemo: false
 			};
 			sources.azubiParams.sync();
@@ -332,13 +351,18 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 	button1.click = function button1_click (event)// @startlock
 	{// @endlock
+		//Cookie set here
+		$.cookie("azubiData", "" + (sources.azubiParams.logIn ? sources.azubiParams.logIn : "") + "|" + (sources.azubiParams.password ? sources.azubiParams.password : "") + "|" + (sources.azubiParams.schoolName ? sources.azubiParams.schoolName : "") + "|" + (sources.azubiParams.host ? sources.azubiParams.host : "")  + "|" + (sources.azubiParams.startDate ? sources.azubiParams.startDate.getTime() : 0) )
+		
 		webUntisSync.webUntisSyncAsync({
+			
 			onSuccess: function(result){
 				console.log(result)
 			},
 			onError: function(error){
 				console.log(error)
 			},
+			
 			params:[sources.azubiParams.host, sources.azubiParams.schoolName, sources.azubiParams.logIn, sources.azubiParams.password, moment(sources.makePDFParams.startDate).format("YYYYMMDD")]
 		});
 	};// @lock
