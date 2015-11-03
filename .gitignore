@@ -30,3 +30,5 @@ sessionID.json
 /anapp/test.js
 
 /anapp/WebFolder/bower_components/
+
+/anapp/modules/deployment.js
