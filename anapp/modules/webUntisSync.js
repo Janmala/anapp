@@ -1,8 +1,9 @@
 
 var webUntisSyncFunc = function(host, schoolName, logIn, password, dateOfRequest){
 	
+	
 	var result = null;
-	var winWorker = SystemWorker.exec("node \"C:\\Users\\Jani\\Documents\\Wakanda\\schoolApp\\schoolApp Solution\\Modules\\WebUntisSync\\index.js\" " + host + " " + schoolName + " " + dateOfRequest + " 0 " + logIn + " " + password); 
+	var winWorker = SystemWorker.exec("node \""+solution.getFolder("path").replace(/\//gi,"\\")+"Modules\\WebUntisSync\\index.js\" " + host + " " + schoolName + " " + dateOfRequest + " 0 " + logIn + " " + password); 
 	if(winWorker && winWorker.output) {
 		result = JSON.parse(winWorker.output.toString());	
 		
@@ -47,16 +48,5 @@ var webUntisSyncFunc = function(host, schoolName, logIn, password, dateOfRequest
 exports.webUntisSync = webUntisSyncFunc;
 	
     
-
-	
-/*var newLog = ds.Log.createEntity(); 
-var today = new Date();     // get the current date and time
-newLog.date = today;     // store the current date and time in the entity
-var todaysInvoices = ds.Invoices.query("date =:1", today);     // get today's invoices
-newLog.total = todaysInvoices.length;     // get the current number of entities
-newLog.custoNb = todaysInvoices.distinctValues( "Customerid" ).length;     // count the distinct customers
-newLog.save( ); */
-
-
 
 //webUntisSync();
