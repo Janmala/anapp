@@ -2,8 +2,8 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
-	var button1 = {};	// @button
 	var textField2 = {};	// @textField
+	var button1 = {};	// @button
 	var documentEvent = {};	// @document
 	var registerButton = {};	// @button
 // @endregion// @endlock
@@ -24,7 +24,7 @@ function doLogIn() {
 	        	window.location.href = "/index.waPage/";
 	           	
 	        } else {
-	        	debugger; 
+	        	 
 	
 	            alertify.log("Fehler: Username oder Passwort inkorrekt");
 	            }
@@ -38,6 +38,13 @@ function doLogIn() {
 
 // eventHandlers// @lock
 
+	textField2.keyup = function textField2_keyup (event)// @startlock
+	{// @endlock
+		if (event.keydown == 13 || event.keyCode == 13) {
+	    	doLogIn();    	
+		}
+	};// @lock
+
 	button1.click = function button1_click (event)// @startlock
 	{// @endlock
 		doLogIn();
@@ -45,13 +52,6 @@ function doLogIn() {
 	};// @lock
 
 
-
-	textField2.keydown = function textField2_keydown (event)// @startlock
-	{// @endlock
-		if (event.keydown == 13 || event.keyCode == 13) {
-	    	doLogIn();    	
-		}
-	};// @lock
 
 
 
@@ -121,8 +121,8 @@ function doLogIn() {
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("textField2", "keyup", textField2.keyup, "WAF");
 	WAF.addListener("button1", "click", button1.click, "WAF");
-	WAF.addListener("textField2", "keydown", textField2.keydown, "WAF");
 	WAF.addListener("document", "onLoad", documentEvent.onLoad, "WAF");
 	WAF.addListener("registerButton", "click", registerButton.click, "WAF");
 // @endregion

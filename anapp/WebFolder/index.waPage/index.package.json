@@ -89,7 +89,7 @@
 			"type": "script"
 		},
 		{
-			"id": "index.waPage/../bower_components/alertify.js/lib/alertify.min.js",
+			"id": "bower_components/alertify.js/lib/alertify.min.js",
 			"path": "WEBFOLDER",
 			"type": "script"
 		}
