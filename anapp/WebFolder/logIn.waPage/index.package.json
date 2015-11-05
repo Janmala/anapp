@@ -24,7 +24,7 @@
 			"type": "widget"
 		},
 		{
-			"id": "metal",
+			"id": "softGray",
 			"type": "theme"
 		},
 		{
@@ -44,6 +44,11 @@
 		},
 		{
 			"id": "bower_components/jquery-cookie/jquery.cookie.js",
+			"path": "WEBFOLDER",
+			"type": "script"
+		},
+		{
+			"id": "logIn.waPage/../bower_components/alertify.js/lib/alertify.min.js",
 			"path": "WEBFOLDER",
 			"type": "script"
 		}

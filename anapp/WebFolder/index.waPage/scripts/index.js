@@ -203,7 +203,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @region namespaceDeclaration// @startlock
 	var logOutButton = {};	// @button
 	var enteredStartDate = {};	// @textField
-	var checkbox1 = {};	// @checkbox
 	var button2 = {};	// @button
 	var NotesTextField = {};	// @textField
 	var menuItemFriday = {};	// @menuItem
@@ -234,11 +233,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	{// @endlock
 		var mondayDate = moment(sources.makePDFParams.startDate).startOf('week').add(1, 'day');
 		sources.makePDFParams.currentDate = mondayDate.toDate();
-		refresh();
-	};// @lock
-
-	checkbox1.change = function checkbox1_change (event)// @startlock
-	{// @endlock
 		refresh();
 	};// @lock
 
@@ -298,6 +292,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
 		
+		alertify.log("Willkommen " + WAF.directory.currentUser().fullName)
+		
 		 if (WAF.directory.currentUser()){
 			//getCookie
 			var logIn;
@@ -313,7 +309,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 				schoolName = $.cookie("azubiData").split("|")[2];
 				host = $.cookie("azubiData").split("|")[3];
 				if( $.cookie("azubiData").split("|")[4] != 0 ){
-					debugger;
 					startDate = new Date(parseInt( $.cookie("azubiData").split("|")[4]));
 				}
 			}
@@ -351,6 +346,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 	button1.click = function button1_click (event)// @startlock
 	{// @endlock
+		alertify.log("Daten werden gesucht, bitte warte einen Moment.")
 		//Cookie set here
 		$.cookie("azubiData", "" + (sources.azubiParams.logIn ? sources.azubiParams.logIn : "") + "|" + (sources.azubiParams.password ? sources.azubiParams.password : "") + "|" + (sources.azubiParams.schoolName ? sources.azubiParams.schoolName : "") + "|" + (sources.azubiParams.host ? sources.azubiParams.host : "")  + "|" + (sources.azubiParams.startDate ? sources.azubiParams.startDate.getTime() : 0) )
 		
@@ -360,7 +356,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 				console.log(result)
 			},
 			onError: function(error){
-				console.log(error)
+				alertify.error("Keine Daten gefunden. Bitte überprüfe deine Eingaben");
 			},
 			
 			params:[sources.azubiParams.host, sources.azubiParams.schoolName, sources.azubiParams.logIn, sources.azubiParams.password, moment(sources.makePDFParams.startDate).format("YYYYMMDD")]
@@ -378,7 +374,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @region eventManager// @startlock
 	WAF.addListener("logOutButton", "click", logOutButton.click, "WAF");
 	WAF.addListener("enteredStartDate", "change", enteredStartDate.change, "WAF");
-	WAF.addListener("checkbox1", "change", checkbox1.change, "WAF");
 	WAF.addListener("button2", "click", button2.click, "WAF");
 	WAF.addListener("NotesTextField", "change", NotesTextField.change, "WAF");
 	WAF.addListener("menuItemFriday", "click", menuItemFriday.click, "WAF");

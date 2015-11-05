@@ -1,4 +1,4 @@
-﻿# OS X
+# OS X
 *.DS_Store
 ._*
 # Wakanda data
@@ -28,7 +28,5 @@ sessionID.json
 *.waRemoteModel
 /anapp Solution/Modules/WebUntisSync/node_modules/
 /anapp/test.js
-
 /anapp/WebFolder/bower_components/
-
 /anapp/modules/deployment.js

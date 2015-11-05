@@ -36,10 +36,6 @@
 			"type": "widget"
 		},
 		{
-			"id": "Widget/checkbox",
-			"type": "widget"
-		},
-		{
 			"id": "Widget/container",
 			"type": "widget"
 		},
@@ -89,6 +85,11 @@
 		},
 		{
 			"id": "index.waPage/scripts/index.js",
+			"path": "WEBFOLDER",
+			"type": "script"
+		},
+		{
+			"id": "index.waPage/../bower_components/alertify.js/lib/alertify.min.js",
 			"path": "WEBFOLDER",
 			"type": "script"
 		}
