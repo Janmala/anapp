@@ -292,7 +292,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
 		
-		alertify.log("Willkommen " + WAF.directory.currentUser().fullName)
+		
 		
 		 if (WAF.directory.currentUser()){
 			//getCookie
@@ -301,6 +301,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			var schoolName;
 			var host;
 			var startDate;
+			alertify.log("Willkommen " + WAF.directory.currentUser().fullName)
 			
 			if($.cookie("azubiData") != null){
 			

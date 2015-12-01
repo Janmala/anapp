@@ -3,7 +3,14 @@ var webUntisSyncFunc = function(host, schoolName, logIn, password, dateOfRequest
 	
 	
 	var result = null;
-	var winWorker = SystemWorker.exec("node \""+solution.getFolder("path").replace(/\//gi,"\\")+"Modules\\WebUntisSync\\index.js\" " + host + " " + schoolName + " " + dateOfRequest + " 0 " + logIn + " " + password); 
+	var winWorker = null;
+	if (os.isWindows){
+		winWorker = SystemWorker.exec("node \""+solution.getFolder("path").replace(/\//gi,"\\")+"Modules\\WebUntisSync\\index.js\" " + host + " " + schoolName + " " + dateOfRequest + " 0 " + logIn + " " + password); 	
+	}else{
+		winWorker = SystemWorker.exec("/usr/local/bin/node '"+solution.getFolder("path") + "Modules/WebUntisSync/index.js' " + host + " " + schoolName + " " + dateOfRequest + " 0 " + logIn + " " + password);
+	}
+	
+	
 	if(winWorker && winWorker.output) {
 		result = JSON.parse(winWorker.output.toString());	
 		
